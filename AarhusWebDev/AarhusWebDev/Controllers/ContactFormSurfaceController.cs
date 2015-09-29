@@ -38,7 +38,7 @@ namespace AarhusWebDev.Controllers
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network; smtp.UseDefaultCredentials = false;
                     smtp.EnableSsl = true;
                     smtp.Host = "smtp.gmail.com"; smtp.Port = 587;
-                    //Mail setups
+                    //Mail setupss
                     smtp.Credentials = new System.Net.NetworkCredential("smonchristensen17@gmail.com", "tuvthazxmdcsddot");
                     smtp.EnableSsl = true;
 
