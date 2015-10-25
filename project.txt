@@ -1,0 +1,15 @@
+Umbraco backoffice
+username: Simon_christensen17@hotmail.com
+password: eaasichr
+
+
+Users:
+
+username: Vicki (Active member)
+password: 1234
+
+username: Kasper (Active member)
+password: 1234
+
+username: Nikolaj (Prospect member)
+password: 1234
