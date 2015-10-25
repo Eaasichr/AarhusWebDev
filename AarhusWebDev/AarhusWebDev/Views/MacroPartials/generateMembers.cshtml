@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+	
+@{
+var memberService =
+ApplicationContext.Current.Services.MemberService;
+
+var members = memberService.GetMembersByGroup("Active");
+}
+
+<h1>Active members</h1>
+
+@foreach (var member in members) 
+{
+<p>
+@(member.GetValue("firstname") + " "
++ member.GetValue("lastname")) <br/>
+@member.GetValue("adress")<br />
+@(member.GetValue("zip") + " "
++ member.GetValue("city"))<br />
+Mobile: @member.GetValue("mobile")<br />
+</p>
+}

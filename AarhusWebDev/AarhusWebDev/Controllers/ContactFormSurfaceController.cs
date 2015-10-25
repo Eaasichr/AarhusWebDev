@@ -31,20 +31,7 @@ namespace AarhusWebDev.Controllers
                 message.Subject = model.Subject;
                 message.From = new MailAddress(model.Email, model.Name);
                 message.Body = model.Message + "\n my email is: " + model.Email;
-
-                // mailopsætning
-                using (SmtpClient smtp = new SmtpClient())
-                {
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network; smtp.UseDefaultCredentials = false;
-                    smtp.EnableSsl = true;
-                    smtp.Host = "smtp.gmail.com"; smtp.Port = 587;
-                    //Mail setupss
-                    smtp.Credentials = new System.Net.NetworkCredential("smonchristensen17@gmail.com", "tuvthazxmdcsddot");
-                    smtp.EnableSsl = true;
-
-                    smtp.Send(message);
-                }
-
+                
                 TempData["success"] = true;
 
                 IContent comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Comments");

@@ -1,13 +1,23 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-	@{ var selection = CurrentPage.Children.Where("Visible").OrderBy("Name"); }
+	@{ var selection = Umbraco.Content(1072).Children;
+	 }
 @* OrderBy() takes the property to sort by *@
 
-<ul>
+<table class="table table-bordered">
+	<tr>
+		<th>Title</th>
+		<th>Status</th>
+	</tr>
     @foreach (var item in selection)
     {
-		//if(item.projectStatus == "Completed"){
-        	<li><a href="@item.Url">@item.Name</a></li>
-		//}
+		<tr>
+			<td>
+				<a href="@item.Url">@item.Name</a>
+			</td>
+			<td>
+				@item.projectStatus
+			</td>
+		</tr>
     }
-</ul>
+</table>
